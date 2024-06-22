@@ -6,16 +6,21 @@
         <div style="display: flex; flex-direction: column;">
         <mat-form-field appearance="fill">
             <mat-label>Hora</mat-label>
-            <input matInput type="number" >
+            <input matInput [(ngModel)]="frmMonto.hora" type="number">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
             <mat-label>Minutos</mat-label>
-            <input matInput type="number" >
+            <input matInput  [(ngModel)]="frmMonto.minuto" type="number" >
         </mat-form-field>
         </div>
     </mat-card-content>
     <mat-card-actions>
-    <button mat-raised-button color="primary">Calcular monto</button> 
+    <button mat-raised-button color="primary" (click)="calcularMonto()">Calcular monto</button> 
     </mat-card-actions>
+    <mat-card>
+        @if(mostrarM){
+        <mat-card-content>{{resultado}}</mat-card-content>
+        }
+      </mat-card>
   </mat-card>
