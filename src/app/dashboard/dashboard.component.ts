@@ -22,6 +22,9 @@ export class DashboardComponent {
   Ejercicio2(){
     this.router.navigate(["ejercicio2"],{relativeTo:this.active } )
   }
+  Ejercicio3(){
+    this.router.navigate(["ejercicio3"],{relativeTo:this.active } )
+  }
   logout(){
     this.auth.logout()
     this.router.navigate(["login"])
