@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { MaterialModule } from '../angular-material/material/material.module';
 import { AuthService } from '../auth/auth.service';
 
@@ -12,10 +12,13 @@ import { AuthService } from '../auth/auth.service';
 })
 export class DashboardComponent {
 
-  constructor(private router:Router, private auth:AuthService){
+  constructor(private router:Router, private auth:AuthService, private active: ActivatedRoute){
 
   }
 
+  Ejercicio1(){
+    this.router.navigate(["ejercicio1"],{relativeTo:this.active } )
+  }
   logout(){
     this.auth.logout()
     this.router.navigate(["login"])
