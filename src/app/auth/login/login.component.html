@@ -6,15 +6,15 @@
         <div style="display: flex; flex-direction: column;">
             <mat-form-field appearance="fill">
                 <mat-label>Usuario</mat-label>
-                <input matInput type="text" #usuarioText>
+                <input matInput type="text" [(ngModel)]="logueo.user">
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>Contraseña</mat-label>
-                <input matInput type="password" #passwordText>
+                <input matInput type="password" [(ngModel)]="logueo.password">
             </mat-form-field>
         </div>
      </mat-card-content>
     <mat-card-actions>
-   <button mat-raised-button color="warn" (click)="login(usuarioText, passwordText)">Ingresar</button>
+   <button mat-raised-button color="warn" (click)="login()">Ingresar</button>
     </mat-card-actions>
   </mat-card>
