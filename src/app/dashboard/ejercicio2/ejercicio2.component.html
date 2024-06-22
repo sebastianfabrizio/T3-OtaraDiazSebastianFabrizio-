@@ -6,25 +6,30 @@
         <div style="display: flex; flex-direction: column;">
         <mat-form-field appearance="fill">
             <mat-label>Nota 1 </mat-label>
-            <input matInput  type="number">
+            <input matInput [(ngModel)]="frmNota.nota1"  type="number">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
             <mat-label>Nota 2</mat-label>
-            <input matInput  type="number" >
+            <input matInput [(ngModel)]="frmNota.nota2"  type="number" >
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Nota 3</mat-label>
-            <input matInput  type="number" >
+            <input matInput [(ngModel)]="frmNota.nota3" type="number" >
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Nota 4</mat-label>
-            <input matInput  type="number" >
+            <input matInput [(ngModel)]="frmNota.nota4" type="number" >
         </mat-form-field>
         </div>
     </mat-card-content>
     <mat-card-actions>
-    <button mat-raised-button color="primary">Calcular promedio</button> 
+    <button mat-raised-button color="primary" (click)="calcularPromedio()">Calcular promedio</button> 
     </mat-card-actions>
+    <mat-card>
+        @if(mostrarM){
+        <mat-card-content>{{resultado}}</mat-card-content>
+        }
+      </mat-card>
   </mat-card>
 
